@@ -1,0 +1,17 @@
+{
+  "name": "kuroshiro-web",
+  "version": "1.0.0",
+  "description": "Kuroshiro API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "waki285 <suzuneu@suzuneu.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@hono/node-server": "^1.1.1",
+    "hono": "^3.5.6",
+    "kuroshiro": "^1.2.0",
+    "kuroshiro-analyzer-kuromoji": "^1.1.0"
+  }
+}
