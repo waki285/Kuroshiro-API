@@ -3,8 +3,6 @@ const { Hono } = require("hono");
 const { default: Kuroshiro } = require("kuroshiro");
 const KuromojiAnalyzer = require("kuroshiro-analyzer-kuromoji");
 
-const kuroshiro = new Kuroshiro();
-kuroshiro.init(new KuromojiAnalyzer());
 
 const app = new Hono();
 app.post("/", async (c) => {
@@ -12,6 +10,8 @@ app.post("/", async (c) => {
   if (!text || !type) {
     return c.text("Text and type are required", 400);
   }
+  const kuroshiro = new Kuroshiro();
+  await kuroshiro.init(new KuromojiAnalyzer());
   try {
     const result = await kuroshiro.convert(
       text,
